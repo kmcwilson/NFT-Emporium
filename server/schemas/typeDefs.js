@@ -21,8 +21,8 @@ type Checkout {
 
 type NFT {
     nft_id: Number
-    token_name: String
-    collection_name: String
+    token: String
+    collection: String
     image: String
     link: String
     owner: String
@@ -36,8 +36,8 @@ type Auth {
 
 input savedNFT {
     nft_id: Number
-    token_name: String
-    collection_name: String
+    token: String
+    collection: String
     image: String
     link: String
     owner: String

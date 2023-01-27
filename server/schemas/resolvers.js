@@ -28,18 +28,55 @@ const resolvers = {
                 });
                 return user.orders.id(_id);
             }
-      
+
             throw new AuthenticationError('Not logged in');
-          },
+        },
 
-          checkout: 
+        checkout: async (parent, args, context) => {
+            const url = new URL(context.headers.referer).origin;
+            const order = new Order({ nfts: args.nfts });
+            const order_items = [];
 
-            },
+            const { nfts } = await order.populate('nfts');
+
+            for (let i = 0; i < nfts.length; i++) {
+                const product = await stripe.nfts.create({
+                    token: nfts[i].token,
+                    collection: nfts[i].collection,
+                    owner: nfts[i].owner,
+                    images: [`${url}/images/${nfts[i].image}`],
+                });
+
+                const price = await stripe.prices.create({
+                    nft: nfts.nft_id,
+                    unit_amount: nfts[i].price * 100,
+                    currency: 'cad',
+                });
+
+                order_items.push({
+                    price: price.id,
+
+                });
+            }
+
+            const session = await stripe.checkout.sessions.create({
+                payment_method_types: ['card'],
+                order_items,
+                mode: 'payment',
+                success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${url}/`
+            });
+
+            return { session: session.id };
+        }
+
+    },
     Mutation: {
         addUser: async (parent, { username, email, password }) => {
             const user = await User.create({ username, email, password });
             const token = signToken(user);
             return { token, user };
+        },
 
             login: async (parent, { email, password }) => {
                 const user = await User.findOne({ email });
@@ -91,5 +128,6 @@ const resolvers = {
                             throw new AuthenticationError('Not logged in');
                         }
         }
-    }
-};
+    };
+
+    module.exports= resolvers;

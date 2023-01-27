@@ -5,11 +5,11 @@ const nftSchema = new Schema({
         type: Number,
         required: true,
     },
-    token_name: {
+    token: {
         type: String,
         required: true,
     },
-    collection_name: {
+    collection: {
         type: String,
     },
     image: {
