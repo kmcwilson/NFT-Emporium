@@ -55,8 +55,7 @@ type Mutation {
     login(email:String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addOrder(nfts: [ID]!): Order
-    saveNFTs(input: savedNFTs!): User
-    updateNFT(nft_id: ID!, quantity: Int!): NFT
+    saveNFT(input: savedNFTs!): User
     removeNFT(nft_id: ID!): User
 }
 
