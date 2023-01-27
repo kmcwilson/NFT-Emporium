@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 //import schema from nft.js
-const NFTSchema = require('./');
+const NFTSchema = require('.');
 const userSchema = new Schema(
     {
         username: {

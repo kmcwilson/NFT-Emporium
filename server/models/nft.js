@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose');
 
 const nftSchema = new Schema({
-    id: {
+    nft_id: {
         type: Number,
         required: true,
     },
