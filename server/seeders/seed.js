@@ -6,7 +6,87 @@ db.once('open', async () => {
 
    await NFT.insertMany([
         {
-            token: 'monkey',
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
+            nft_collection: 'ape',
+            image: 'Hello',
+            link: 'I ama  link',
+            owner: 'Katie',
+            price: 299.99
+        },
+        {
+            nft_token: 'monkey',
             nft_collection: 'ape',
             image: 'Hello',
             link: 'I ama  link',

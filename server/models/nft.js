@@ -2,10 +2,10 @@ const { Schema, model } = require('mongoose');
 
 const nftSchema = new Schema(
     {
-        token: {
+        nft_token: {
             type: String,
             required: true,
-            trim: true
+            trim: true,
         },
         nft_collection: {
             type: String,
@@ -23,7 +23,7 @@ const nftSchema = new Schema(
             type: Number,
             min: 0,
             default: 0,
-            required: true
+            required: true,
         }
 
 
