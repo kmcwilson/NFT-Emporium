@@ -1,4 +1,6 @@
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+
+const { Schema, model } = mongoose;
 
 const nftSchema = new Schema({
     nft_id: {
@@ -32,4 +34,6 @@ const nftSchema = new Schema({
 
 
 })
-module.exports = nftSchema;
+
+const NFT = model('NFT', nftSchema)
+module.exports = NFT;
