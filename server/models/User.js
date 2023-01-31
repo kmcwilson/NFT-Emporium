@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 const bcrypt = require('bcrypt');
-const Order = require('./Order');
+const orderSchema = require('./Order');
 //import schema from nft.js
-const NFTSchema = require('./NFT');
+const nftSchema = require('./NFT');
 const userSchema = new Schema(
     {
         username: {
@@ -23,8 +23,8 @@ const userSchema = new Schema(
             required: true,
         },
         // set savedNFTS to be an array of data that adheres to the NFTSchema
-        saveNFTs: [NFTSchema],
-        orders: [Order.schema]
+        saveNFTs: [nftSchema],
+        orders: [orderSchema]
     },
     // set this to use virtual below
     {
