@@ -15,7 +15,7 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
         nfts: async () => {
-            return await NFT.find({});
+            return await NFT.find();
         },
         nft: async (parent, {_id})=> {
             const nft = await NFT.findById(_id);
@@ -41,15 +41,15 @@ const resolvers = {
             const { nfts } = await order.populate('nfts');
 
             for (let i = 0; i < nfts.length; i++) {
-                const product = await stripe.nfts.create({
-                    token: nfts[i].token,
-                    collection: nfts[i].collection,
+                const nfts = await stripe.nfts.create({
+                    nft_token: nfts[i].nft_token,
+                    nft_collection: nfts[i].nft_collection,
                     owner: nfts[i].owner,
                     images: [`${url}/images/${nfts[i].image}`],
                 });
 
                 const price = await stripe.prices.create({
-                    nft: nfts.nft_id,
+                    nft: nfts.id,
                     unit_amount: nfts[i].price * 100,
                     currency: 'cad',
                 });
