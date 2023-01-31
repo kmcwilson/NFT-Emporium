@@ -12,7 +12,7 @@ type User {
     username: String
     email: String
     nftCount: Int
-    saveNFTs: [NFT]
+    savedNFTs: [NFT]
     orders: [Order]
 }
 
@@ -20,18 +20,18 @@ type Checkout {
     session: ID
   }
 
-type nfts {
+type NFT {
     _id: ID
     token: String
     collection: String
     image: String
     link: String
     owner: String
-    price: Int
+    price: Float
 }
 
 type Auth {
-    token: ID!
+    token: ID
     user: User
 }
 
@@ -42,10 +42,10 @@ input savedNFT {
     image: String
     link: String
     owner: String
-    price: Int
+    price: Float
 }
 type Query {
-    nft(_id: ID!): NFT
+    nfts(_id: ID!): NFT
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
@@ -56,7 +56,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     addOrder(nfts: [ID]!): Order
     saveNFTs(input: savedNFT!): User
-    removeNFT(nft_id: ID!): User
+    removeNFT(_id: ID!): User
 }
 
 `;

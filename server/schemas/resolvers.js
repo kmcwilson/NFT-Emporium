@@ -92,7 +92,7 @@ const resolvers = {
 
                 return { token, user };
             },
-                saveNFT: async (parent, { input }, context) => {
+                saveNFTs: async (parent, { input }, context) => {
                     if (context.user) {
                         const updatedUser = await User.findByIdAndUpdate(
                             { _id: context.user._id },
@@ -107,7 +107,7 @@ const resolvers = {
                         if (context.user) {
                             const updatedUser = await User.findOneAndUpdate(
                                 { _id: context.user._id },
-                                { $pull: { savedNFTs: { nft_id: args.nft_id } } },
+                                { $pull: { savedNFTs: { nftId: args.nft._id } } },
                                 { new: true }
                             );
                             return updatedUser;
