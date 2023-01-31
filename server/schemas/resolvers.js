@@ -14,8 +14,12 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
-        nfts: async (parent, { nft_id }) => {
-            return await NFT.findOne({ _id: nft_id });
+        nfts: async () => {
+            return await NFT.find({});
+        },
+        nft: async (parent, {_id})=> {
+            const nft = await NFT.findById(_id);
+
         },
         order: async (parent, { _id }, context) => {
             if (context.user) {

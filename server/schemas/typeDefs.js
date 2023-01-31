@@ -23,7 +23,7 @@ type Checkout {
 type NFT {
     _id: ID
     token: String
-    collection: String
+    nft_collection: String
     image: String
     link: String
     owner: String
@@ -38,14 +38,15 @@ type Auth {
 input savedNFT {
     _id: ID
     token: String
-    collection: String
+    nft_collection: String
     image: String
     link: String
     owner: String
     price: Float
 }
 type Query {
-    nfts(_id: ID!): NFT
+    nfts:[NFT]
+    nft(_id: ID!): NFT
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
