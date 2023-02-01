@@ -1,29 +1,36 @@
 import React from 'react';
-import './Card.css';
+import './Card.css'
 
-export function Card(title, imageURL, body) {
-    return (
-        <div className='card-container'>
-            <div className='image-container'>
-                <img src={imageURL} alt='' />
-            </div>
-            <div className='card-content'>
-                <div className='card-title'>
-                    <h3>{title}</h3>
-                </div>
-                <div className='card-body'>
-                    <p>{body}</p>
-                </div>
-            </div>
-            <div className='btn'>
-                <button>
-                    <a>
-                        Buy Now
-                    </a>
-                </button>
-            </div>
+export default function Card(props) {
+  const cardStyle = {
+    width: '18rem',
+  };
+
+  // Helper function that generates a random width for our placeholder images
+//   const randomWidth = () => {
+//     const number = Math.random() * (300 - 200) + 200;
+//     return number.toString().split('.')[0];
+//   };
+
+  return (
+    <div className="container">
+      <div className="card" style={cardStyle}>
+        <img
+          className="card-img-top"
+          src={`http://placecorgi.com/`}
+          alt="Card cap"
+        />
+        <div className="card-body">
+        <h5 className="card-title">Name: {props.name}</h5>
+          <p className="card-text">Description: {props.description}</p>
+          <p className="card-text">ID: {props.id}</p>
+          <a href="#" className="btn btn-primary">
+            Buy Now {props.name}
+          </a>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
-export default Card
+
 
