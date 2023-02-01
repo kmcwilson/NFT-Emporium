@@ -63,3 +63,18 @@ mutation removeNFT($nftId: ID!){
     }
 }
 `;
+ export const ADD_ORDER= gql`
+ mutation addOrder ($nfts: [ID]!){
+    addOrder(nfts: $nfts) {
+        nfts{
+            _id
+            nft_token
+            nft_collection
+            image
+            link
+            owner
+            price
+        }
+    }
+ }
+ `;
