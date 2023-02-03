@@ -13,9 +13,6 @@ const nftSchema = new Schema(
         image: {
             type: String,
         },
-        link: {
-            type: String,
-        },
         owner: {
             type: String,
         },
