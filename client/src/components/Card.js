@@ -1,35 +1,33 @@
-import React from 'react';
-import './Card.css'
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-export default function Card(props) {
-  const cardStyle = {
-    width: '18rem',
-  };
-
-  // Helper function that generates a random width for our placeholder images
-//   const randomWidth = () => {
-//     const number = Math.random() * (300 - 200) + 200;
-//     return number.toString().split('.')[0];
-//   };
-
+export default function MediaCard() {
   return (
-    <div className="container">
-      <div className="card" style={cardStyle}>
-        <img
-          className="card-img-top"
-          src={`http://placecorgi.com/`}
-          alt="Card cap"
-        />
-        <div className="card-body">
-        <h5 className="card-title">Name: {props.name}</h5>
-          <p className="card-text">Description: {props.description}</p>
-          <p className="card-text">ID: {props.id}</p>
-          <a href="#" className="btn btn-primary">
-            Buy Now {props.name}
-          </a>
-        </div>
-      </div>
-    </div>
+    <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        sx={{ height: 140 }}
+        image="/static/images/cards/contemplative-reptile.jpg"
+        title="green iguana"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Lizard
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Lizards are a widespread group of squamate reptiles, with over 6,000
+          species, ranging across all continents except Antarctica
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Add To Wishlist</Button>
+        <Button size="small">Buy Now</Button>
+      </CardActions>
+    </Card>
   );
 }
 
