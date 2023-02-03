@@ -14,8 +14,12 @@ const resolvers = {
             }
             throw new AuthenticationError('Not logged in');
         },
-        nfts: async (parent, { nft_id }) => {
-            return await NFT.findOne({ _id: nft_id });
+        nfts: async () => {
+            return await NFT.find();
+        },
+        nft: async (parent, {_id})=> {
+            const nft = await NFT.findById(_id);
+
         },
         order: async (parent, { _id }, context) => {
             if (context.user) {
@@ -37,15 +41,15 @@ const resolvers = {
             const { nfts } = await order.populate('nfts');
 
             for (let i = 0; i < nfts.length; i++) {
-                const product = await stripe.nfts.create({
-                    token: nfts[i].token,
-                    collection: nfts[i].collection,
+                const nfts = await stripe.nfts.create({
+                    nft_token: nfts[i].nft_token,
+                    nft_collection: nfts[i].nft_collection,
                     owner: nfts[i].owner,
                     images: [`${url}/images/${nfts[i].image}`],
                 });
 
                 const price = await stripe.prices.create({
-                    nft: nfts.nft_id,
+                    nft: nfts.id,
                     unit_amount: nfts[i].price * 100,
                     currency: 'cad',
                 });
@@ -92,7 +96,7 @@ const resolvers = {
 
                 return { token, user };
             },
-                saveNFT: async (parent, { input }, context) => {
+                saveNFTs: async (parent, { input }, context) => {
                     if (context.user) {
                         const updatedUser = await User.findByIdAndUpdate(
                             { _id: context.user._id },
@@ -107,7 +111,7 @@ const resolvers = {
                         if (context.user) {
                             const updatedUser = await User.findOneAndUpdate(
                                 { _id: context.user._id },
-                                { $pull: { savedNFTs: { nft_id: args.nft_id } } },
+                                { $pull: { savedNFTs: { nftId: args.nft._id } } },
                                 { new: true }
                             );
                             return updatedUser;

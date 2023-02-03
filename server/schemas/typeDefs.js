@@ -1,18 +1,18 @@
-const { gql }= require('apollo-server-express');
+const { gql } = require('apollo-server-express');
 
-const typeDefs = gql `
+const typeDefs = gql`
 
 type Order {
     _id: ID
     purchaseDate: String
-    products: [NFT]
+    nfts: [NFT]
   }
 type User {
     _id: ID!
     username: String
     email: String
     nftCount: Int
-    saveNFTs: [NFT]
+    savedNFTs: [NFT]
     orders: [Order]
 }
 
@@ -20,32 +20,33 @@ type Checkout {
     session: ID
   }
 
-type nfts {
+type NFT {
     _id: ID
-    token: String
-    collection: String
+    nft_token: String
+    nft_collection: String
     image: String
     link: String
     owner: String
-    price: Int
+    price: Float
 }
 
 type Auth {
-    token: ID!
+    token: ID
     user: User
 }
 
 input savedNFT {
     _id: ID
-    token: String
-    collection: String
+    nft_token: String
+    nft_collection: String
     image: String
     link: String
     owner: String
-    price: Int
+    price: Float
 }
 type Query {
-    nft(_id: ID!): NFT
+    nfts:[NFT]
+    nft(nftId: ID!): NFT
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
@@ -56,9 +57,9 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     addOrder(nfts: [ID]!): Order
     saveNFTs(input: savedNFT!): User
-    removeNFT(nft_id: ID!): User
+    removeNFT(nftId: ID!): User
 }
 
 `;
 
-module.exports= typeDefs;
+module.exports = typeDefs;
