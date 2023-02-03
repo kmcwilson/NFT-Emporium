@@ -5,14 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import seeds from ''
+import seeds from '@apollo/client';
 
-export default function ImgMediaCard(props) {
+export default function HomeCard(props){
+
+  
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        alt="green iguana"
+        alt={props.nft_token}
         height="140"
         image={`/static/images/cards/${props.image}`}
       />
@@ -21,18 +23,18 @@ export default function ImgMediaCard(props) {
          {props.nft_token}
         </Typography>
         <Typography gutterBottom variant="h6" component="div">
-         {props.nft_token}
+         {props.nft_collection}
         </Typography>
         <Typography variant="body2" color="text.secondary">
          {props.price} {props.owner}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Add to Wish List</Button>
-        <Button size="small">Buy Now!</Button>
+        <Button size="small" variant="contained">Add to Wish List</Button>
+        <Button size="small" variant="contained">Buy Now!</Button>
       </CardActions>
     </Card>
   );
-}
+  }
 
 
