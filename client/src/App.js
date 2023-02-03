@@ -7,6 +7,7 @@ import About from './components/pages/About';
 import ContactUs from './components/pages/ContactUs';
 import SignUp from './components/pages/SignUp';
 import BuySell from './components/pages/BuySell';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/buy-sell' component={BuySell} />
 
       </Routes>
+      <Footer />
     </Router>
   );
 }
