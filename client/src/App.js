@@ -49,7 +49,7 @@ function App() {
         <Route path='/contact-us' element={<ContactUs/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/sign-up' element={<SignUp/>} />
-        {/* <Route path='/wishlist' element={<Wishlist/>} /> */}
+        <Route path='/wishlist' element={<Wishlist/>} />
 
       </Routes>
       <Footer />

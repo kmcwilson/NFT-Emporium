@@ -16,15 +16,15 @@ db.once('open', async () => {
             nft_token: 'Everydays-The First 5000 Days',
             nft_collection: 'Beeple',
             image: 'Beeple.png',
-            owner: '0x8bB37fb0F0462bB3FC8995cf17721f8e4a399629',
-            price: 42,329.425
+            owner: 'Metakovan',
+            price: 42329.425
         },
         {
             nft_token: '5822',
             nft_collection: 'CryptoPunks',
             image: 'Alienpunk.png',
             owner: '0x4d8f496a4e29f5643d9161b9749d99a9623abf78',
-            price: 8,000
+            price: 8000
         },
         {
             nft_token: 'Gift Goat',
@@ -38,7 +38,7 @@ db.once('open', async () => {
             nft_collection: 'CryptoPunks',
             image: 'Apepunk.png',
             owner: '0x9045deb6c61b6bc687a070baba941fcf34e5759d',
-            price: 3,300
+            price: 3300
         },
         {
             nft_token: '6388',
@@ -59,7 +59,7 @@ db.once('open', async () => {
             nft_collection: 'Bored Ape Chemistry Club ',
             image: 'Serum.png',
             owner: '0x69c488Bcda156379B6661f08A35dB627E5D467Dd',
-            price: 1,540.069
+            price: 1540.069
         },
         {
             nft_token: '4849',
@@ -78,4 +78,4 @@ db.once('open', async () => {
 
     ]);
     process.exit();
-})
+});

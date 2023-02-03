@@ -13,15 +13,36 @@ mutation login($email: String!, $password: String!){
 `;
 
 export const ADD_USER = gql`
-mutation addUser($username: String!, $email: String!, $password: String!){
-    addUser(username: $username, email: $email, password: $password){
-        token
-        user{
+mutation AddUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      token
+      user {
+        _id
+        email
+        nftCount
+        orders {
+          _id
+          nfts {
             _id
-            username
+            image
+            nft_collection
+            nft_token
+            owner
+            price
+          }
         }
+        savedNFTs {
+          _id
+          image
+          nft_collection
+          nft_token
+          owner
+          price
+        }
+        username
+      }
     }
-}
+  }
 `;
 export const SAVE_NFTS = gql`
 mutation saveNFTs($input: savedNFT!){
@@ -31,13 +52,13 @@ mutation saveNFTs($input: savedNFT!){
         email
         nftCount
         savedNFTs{
-           # _id: ID
-            nft_token: String
-            nft_collection: String
-            image: String
-            link: String
-            owner: String
-            price: Float
+            _id
+            nft_token
+            nft_collection
+            image
+            link
+            owner
+            price
         }
     }
 }
@@ -51,22 +72,6 @@ mutation removeNFT($nftId: ID!){
         email
         nftCount
         savedNFTs{
-            # _id: ID
-            nft_token: String
-            nft_collection: String
-            image: String
-            link: String
-            owner: String
-            price: Float
-
-        }
-    }
-}
-`;
- export const ADD_ORDER= gql`
- mutation addOrder ($nfts: [ID]!){
-    addOrder(nfts: $nfts) {
-        nfts{
             _id
             nft_token
             nft_collection
@@ -74,7 +79,23 @@ mutation removeNFT($nftId: ID!){
             link
             owner
             price
+
         }
     }
- }
+}
+`;
+ export const ADD_ORDER= gql`
+ mutation Mutation($nfts: [ID]!) {
+    addOrder(nfts: $nfts) {
+      _id
+      nfts {
+        _id
+        image
+        nft_collection
+        nft_token
+        owner
+        price
+      }
+    }
+  }
  `;
