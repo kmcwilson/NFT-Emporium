@@ -13,7 +13,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import ContactUs from './pages/ContactUs';
 import SignUp from './pages/SignUp';
-import BuySell from './pages/BuySell';
+import Wishlist from './pages/Wishlist';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -48,7 +48,7 @@ function App() {
         <Route path='/contact-us' element={<ContactUs/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/sign-up' element={<SignUp/>} />
-        <Route path='/buy-sell' element={<BuySell/>} />
+        {/* <Route path='/wishlist' element={<Wishlist/>} /> */}
 
       </Routes>
     </Router>
