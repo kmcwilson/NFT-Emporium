@@ -9,14 +9,14 @@ db.once('open', async () => {
             nft_token: 'Hangout Hawk',
             nft_collection: 'VeeFriends',
             image: 'Hangouthawk.png',
-            owner: 'ryanparketh',
+            owner: '0x9e90ad993827A9f8a99C211b4A5D00e4f5E6DD6d',
             price: 15
         },
         {
             nft_token: 'Everydays-The First 5000 Days',
             nft_collection: 'Beeple',
             image: 'Beeple.png',
-            owner: 'Metakovan',
+            owner: '0x8bB37fb0F0462bB3FC8995cf17721f8e4a399629',
             price: 42,329.425
         },
         {
@@ -30,7 +30,7 @@ db.once('open', async () => {
             nft_token: 'Gift Goat',
             nft_collection: 'VeeFriends',
             image: 'Giftgoat.png',
-            owner: 'GaryVee',
+            owner: '0x5ea9681C3Ab9B5739810F8b91aE65EC47de62119',
             price: 20
         },
         {
@@ -44,7 +44,7 @@ db.once('open', async () => {
             nft_token: '6388',
             nft_collection: 'Bored Ape Yacht Club',
             image: 'Goldglassesbayc.png',
-            owner: 'nobody_vault',
+            owner: '0x7eb413211a9DE1cd2FE8b8Bb6055636c43F7d206',
             price: 869.69
         },
         {
@@ -72,7 +72,7 @@ db.once('open', async () => {
             nft_token: '2642',
             nft_collection: 'Moonbirds',
             image: 'Moonbird.png',
-            owner: 'TheSandboxGame',
+            owner: '0x7A9fe22691c811ea339D9B73150e6911a5343DcA',
             price: 350
         },
 
