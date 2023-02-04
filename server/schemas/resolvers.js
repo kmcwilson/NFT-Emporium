@@ -6,11 +6,8 @@ const resolvers = {
     Query: {
         user: async (parent, args, context) => {
             if (context.user) {
-                const user = await User.findById(context.user._id).populate({
-                    path: 'orders.nfts',
-                });
-                user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
-                return user;
+                const userData = await User.findById(context.user._id)
+                return userData;
             }
             throw new AuthenticationError('Not logged in');
         },
@@ -33,43 +30,43 @@ const resolvers = {
             throw new AuthenticationError('Not logged in');
         },
 
-        checkout: async (parent, args, context) => {
-            const url = new URL(context.headers.referer).origin;
-            const order = new Order({ nfts: args.nfts });
-            const order_items = [];
+        // checkout: async (parent, args, context) => {
+        //     const url = new URL(context.headers.referer).origin;
+        //     const order = new Order({ nfts: args.nfts });
+        //     const order_items = [];
 
-            const { nfts } = await order.populate('nfts');
+        //     const { nfts } = await order.populate('nfts');
 
-            for (let i = 0; i < nfts.length; i++) {
-                const nfts = await stripe.nfts.create({
-                    nft_token: nfts[i].nft_token,
-                    nft_collection: nfts[i].nft_collection,
-                    owner: nfts[i].owner,
-                    images: [`${url}/images/${nfts[i].image}`],
-                });
+        //     for (let i = 0; i < nfts.length; i++) {
+        //         const nfts = await stripe.nfts.create({
+        //             nft_token: nfts[i].nft_token,
+        //             nft_collection: nfts[i].nft_collection,
+        //             owner: nfts[i].owner,
+        //             images: [`${url}/images/${nfts[i].image}`],
+        //         });
 
-                const price = await stripe.prices.create({
-                    nft: nfts.id,
-                    unit_amount: nfts[i].price * 100,
-                    currency: 'cad',
-                });
+        //         const price = await stripe.prices.create({
+        //             nft: nfts.id,
+        //             unit_amount: nfts[i].price * 100,
+        //             currency: 'cad',
+        //         });
 
-                order_items.push({
-                    price: price.id,
+        //         order_items.push({
+        //             price: price.id,
 
-                });
-            }
+        //         });
+        //     }
 
-            const session = await stripe.checkout.sessions.create({
-                payment_method_types: ['card'],
-                order_items,
-                mode: 'payment',
-                success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-                cancel_url: `${url}/`
-            });
+        //     const session = await stripe.checkout.sessions.create({
+        //         payment_method_types: ['card'],
+        //         order_items,
+        //         mode: 'payment',
+        //         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        //         cancel_url: `${url}/`
+        //     });
 
-            return { session: session.id };
-        }
+        //     return { session: session.id };
+        // }
 
     },
     Mutation: {
@@ -96,12 +93,15 @@ const resolvers = {
 
                 return { token, user };
             },
-                saveNFTs: async (parent, { input }, context) => {
+                saveNFTs: async (parent, args, context) => {
                     if (context.user) {
                         const updatedUser = await User.findByIdAndUpdate(
                             { _id: context.user._id },
                             { $addToSet: { savedNFT: args.input } },
-                            { new: true }
+                            { new: true,
+                            runValidators: true,
+                            }
+
                         );
                         return updatedUser;
                     }
