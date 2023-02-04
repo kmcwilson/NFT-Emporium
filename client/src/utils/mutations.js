@@ -1,14 +1,14 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
-mutation login($email: String!, $password: String!){
-    login(email: $email, password: $password){
-       token
-       user{
-        _id
-        username
-       } 
+mutation Login($email: String!, $password: String!) {
+  login(email: $email, password: $password) {
+    token
+    user {
+      email
+      _id
     }
+  }
 }
 `;
 
@@ -19,34 +19,14 @@ mutation AddUser($username: String!, $email: String!, $password: String!) {
       user {
         _id
         email
-        nftCount
-        orders {
-          _id
-          nfts {
-            _id
-            image
-            nft_collection
-            nft_token
-            owner
-            price
-          }
-        }
-        savedNFTs {
-          _id
-          image
-          nft_collection
-          nft_token
-          owner
-          price
-        }
         username
       }
     }
   }
 `;
 export const SAVE_NFTS = gql`
-mutation saveNFTs($input: savedNFT!){
-    saveNFT(input: $input){
+mutation saveNFTs($input: ID!){
+    saveNFTs(input: $input){
         _id
         username
         email
