@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* styling for about us cards */
+.page-background {
+  background-image: url('../src/assets/IMG1.jpg');
+  background-size: 100% 100%;
+}
+.single-project {
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: 100% 95%;
+  /* Resize the background image to cover the entire container */
+  height: 350px;
+  width: 350px;
+  margin-bottom: 50px;
+  border-style: solid;
+  border-color: #935c68ff;
+  border-width: 3px;
+  box-shadow: 10px 10px 5px var(--mauve);
+  font-family: 'Playfair', sans-serif;
+}
+
+.card-title {
+  text-align: center;
+  color: var(--green);
+  font-weight: bold;
+}
+
+.card-button {
+  padding: 10px;
+  background-color: var(--mauve);
+  color: var(--yellow);
+  border-radius: 5px;
+  margin: 10px;
+  justify-content: center;
+}
+
+.card-info:hover {
+  opacity: 0.95;
+}
