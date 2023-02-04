@@ -52,8 +52,9 @@ function App() {
         <Route path='/wishlist' element={<Wishlist/>} />
 
       </Routes>
-      <Footer />
+    
     </Router>
+    <Footer />
     </ApolloProvider>
   );
 }

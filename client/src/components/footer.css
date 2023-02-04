@@ -1,0 +1,31 @@
+footer {
+  background-color: black;
+  padding: .50rem;
+  text-align: center;
+  font-size:medium;
+  margin-top: 6rem;
+}
+
+
+
+.footer__links{
+display:flex;
+justify-content: center;
+gap: 2rem;
+margin-bottom: 2rem;
+font-size: 1.2rem;
+}
+
+.footer__links a{
+ 
+color: white;
+text-decoration: none;
+padding: 0.5rem 1rem;
+}
+
+.footer__links:hover{
+  background-color: #009B77;
+  border-radius: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
