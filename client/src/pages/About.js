@@ -1,12 +1,12 @@
 import React from 'react';
 import AboutCard from '../components/About';
-import data from '../utils/data';
+import aboutData from '../utils/aboutData';
 
 const About = () => {
   return (
     <div className="container about-page" style={{display:'flex', justifyContent: 'space-between',
     flexWrap: 'wrap'}}>
-      {data.map(about =>
+      {aboutData.map(about =>
         (<AboutCard
         key={about.id}
         title={about.title}
