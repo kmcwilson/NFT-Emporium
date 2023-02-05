@@ -11,7 +11,7 @@ import Navbar from './components/Navbar';
 import './App.css';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
+import About from './components/About';
 import ContactUs from './pages/ContactUs';
 import SignUp from './pages/SignUp';
 import Wishlist from './pages/Wishlist';
