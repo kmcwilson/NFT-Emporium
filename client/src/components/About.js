@@ -2,14 +2,13 @@ import React from 'react';
 import '../App.css';
 import { FaLinkedin } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa'
-import IMG1 from '/images/IMG1.jpg'
 import './About.css'
 
 
 const data = [
   {
     id: 1,
-    image: IMG1,
+    image: '/images/IMG1.jpg',
     title: 'Heela Qayumie',
     desc: 'Future full stack web developer leveraging a background in finance, communications and political science to provide unique perspectives on how end-users can interact with websites and software platforms. I have bachelor of Arts majoring in both Political Science and Communications from Carleton University. I am currently working in finance as an Investment Specialist Associate. My strengths lie in teamwork, creativity, and attention to detail. I am a naturally curious person with a passion for learning and a hard worker who does not take life too seriously. ',
     github: 'https://github.com/hqayumie',
@@ -43,7 +42,7 @@ const About = () => {
             return (
               <article key={id} className='about__item'>
                 <div className="about__item-image">
-                  <img src={image} alt={title} />
+                  <img src={image} alt={title} height='100px' width= '100px'/>
                 </div>
                 <h3>{title}</h3>
                 <h4>{desc}</h4>
