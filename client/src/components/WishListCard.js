@@ -9,25 +9,25 @@ import Grid from '@mui/material/Grid';
 
 import Auth from '../utils/auth';
 import { useMutation, useQuery } from '@apollo/client';
-import { QUERY_USER } from '../utils/queries';
+// import { QUERY_USER } from '../utils/queries';
 import { REMOVE_NFT } from '../utils/mutations';
 import { removeNftId } from '../utils/localStorage';
 
 
 export default function WishListCard(props) {
-  const { loading, data } = useQuery(QUERY_USER);
-  const userData = data?.me || [];
-  const userDataLength = Object.keys(userData).length;
+  // const { loading, data } = useQuery(QUERY_USER);
+  // const userData = data?.me || [];
+  // const userDataLength = Object.keys(userData).length;
   const [removeNft] = useMutation(REMOVE_NFT);
 
-  if (loading) { return <h1> Loading...</h1> }
+  // if (loading) { return <h1> Loading...</h1> }
 
   const handleDeleteNFT = async (nftId) => {
-    const token = Auth.loggedIn()? Auth.getToken(): null;
+    // const token = Auth.loggedIn()? Auth.getToken(): null;
 
-    if(!token){
-      return false;
-    }
+    // if(!token){
+    //   return false;
+    // }
 
     try {
       await removeNft({ variables: props.id });
