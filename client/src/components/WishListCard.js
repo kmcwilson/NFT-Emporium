@@ -47,7 +47,7 @@ export default function WishListCard(props) {
         <Card sx={{maxWidth: 345}}>
             <CardMedia
                 component="img"
-                alt="green iguana"
+                alt= {`${props.token}`}
                 height="200"
                 image={`images/${props.image}`}
             />
