@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import '../App.css';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -25,10 +25,10 @@ console.log('Data:',data);
         {nfts.map(nft=> 
           (<HomeCard 
           key={nft._id}
-          id={nft._id}
-          token={nft.nft_token}
+          _id={nft._id}
+          nft_token={nft.nft_token}
           image= {nft.image}
-          collection={nft.collection}
+          nft_collection={nft.collection}
           price= {nft.price}
           owner={nft.owner}
           />)

@@ -25,7 +25,7 @@ mutation AddUser($username: String!, $email: String!, $password: String!) {
   }
 `;
 export const SAVE_NFTS = gql`
-mutation saveNFTs($input: ID!){
+mutation saveNFTs($input: savedNFT!){
     saveNFTs(input: $input){
         _id
         username

@@ -48,15 +48,13 @@ type Query {
     nfts:[NFT]
     nft(nftId: ID!): NFT
     user: User
-    order(_id: ID!): Order
-    checkout(products: [ID]!): Checkout
 }
 
 type Mutation {
     login(email:String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addOrder(nfts: [ID]!): Order
-    saveNFTs(input: ID!): User
+    saveNFTs (input: savedNFT!): User
     removeNFT(nftId: ID!): User
 }
 

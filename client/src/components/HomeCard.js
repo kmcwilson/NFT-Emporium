@@ -32,8 +32,7 @@ export default function HomeCard(props){
     }
 
     try {
-      const {data} = await saveNft({variables: {input: props.id}})
-console.log('Data:', data)
+      const {data} = await saveNft({variables: {input: props}})
       setSavedNftIds([...savedNftIds, nftId])
 
     }
@@ -55,10 +54,10 @@ console.log('Data:', data)
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-         {props.token}
+         {props.nft_token}
         </Typography>
         <Typography gutterBottom variant="h6" component="div">
-         {props.collection}
+         {props.nft_collection}
         </Typography>
         <Typography variant="body2" color="text.secondary">
          {props.price} 
@@ -68,7 +67,7 @@ console.log('Data:', data)
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" variant="contained" onClick={()=> handleSaveNfts(props.id)}>Add to Wish List</Button>
+        <Button size="small" variant="contained" onClick={()=> handleSaveNfts(props)}>Add to Wish List</Button>
         <Button size="small" variant="contained">Buy Now!</Button>
       </CardActions>
     </Card>

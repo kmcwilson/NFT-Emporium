@@ -12,7 +12,6 @@ import './App.css';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './components/About';
-import ContactUs from './pages/ContactUs';
 import SignUp from './pages/SignUp';
 import Wishlist from './pages/Wishlist';
 
@@ -46,7 +45,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/contact-us' element={<ContactUs/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/sign-up' element={<SignUp/>} />
         <Route path='/wishlist' element={<Wishlist/>} />
