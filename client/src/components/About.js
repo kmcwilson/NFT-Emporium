@@ -42,7 +42,7 @@ const About = () => {
             return (
               <article key={id} className='about__item'>
                 <div className="about__item-image">
-                  <img src={image} alt={title} />
+                  <img src={image} alt={title} height='100px' width= '100px'/>
                 </div>
                 <h3>{title}</h3>
                 <h4>{desc}</h4>
