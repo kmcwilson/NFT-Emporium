@@ -18,17 +18,17 @@ const resolvers = {
             const nft = await NFT.findById(_id);
 
         },
-        order: async (parent, { _id }, context) => {
-            if (context.user) {
-                const user = await User.findById(context.user._id).populate({
-                    path: 'orders.nfts',
+        // order: async (parent, { _id }, context) => {
+        //     if (context.user) {
+        //         const user = await User.findById(context.user._id).populate({
+        //             path: 'orders.nfts',
 
-                });
-                return user.orders.id(_id);
-            }
+        //         });
+        //         return user.orders.id(_id);
+        //     }
 
-            throw new AuthenticationError('Not logged in');
-        },
+        //     throw new AuthenticationError('Not logged in');
+        // },
 
         // checkout: async (parent, args, context) => {
         //     const url = new URL(context.headers.referer).origin;
@@ -94,6 +94,7 @@ const resolvers = {
                 return { token, user };
             },
                 saveNFTs: async (parent, args, context) => {
+                    console.log('Context:', context);
                     if (context.user) {
                         const updatedUser = await User.findByIdAndUpdate(
                             { _id: context.user._id },
@@ -119,15 +120,15 @@ const resolvers = {
                         throw new AuthenticationError('You need to be logged in!')
 
                     },
-                        addOrder: async (parent, { nfts }, context) => {
-                            if (context.user) {
-                                const order = new Order({ nfts });
-                                await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-                                return order;
+                        // addOrder: async (parent, { nfts }, context) => {
+                        //     if (context.user) {
+                        //         const order = new Order({ nfts });
+                        //         await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+                        //         return order;
 
-                            }
-                            throw new AuthenticationError('Not logged in');
-                        }
+                        //     }
+                        //     throw new AuthenticationError('Not logged in');
+                        // }
         }
     };
 
