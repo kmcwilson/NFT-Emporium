@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import { FaLinkedin } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa'
-import IMG1 from '../../images/IMG1.jpg'
+import IMG1 from '/images/IMG1.jpg'
 import './About.css'
 
 
