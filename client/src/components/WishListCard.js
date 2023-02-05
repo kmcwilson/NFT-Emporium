@@ -38,9 +38,9 @@ export default function WishListCard(props) {
     }
   };
 
-  if (!userDataLength){
-    return<h2>Loading...</h2>
-  }
+  // if (!userDataLength){
+  //   return<h2>Loading...</h2>
+  // }
  
     return (
       <Grid xs={4} sm={4} md={3}>
