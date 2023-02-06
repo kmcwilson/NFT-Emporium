@@ -26,8 +26,8 @@ This projectis a full stack web application using the MERN Stack single- page ap
 The MERN stack has a three-layer architecture based on Model-View-Controller pattern and each interconnected layer performs a specific function in the application. The MERN Stack consists of a group of four technologies which include:
 
 -  React JS for the front end, that is, the client (View) in which the user inputs data and the data display.
--  Express.js and Node.js is the next level down. The Express.js server side framework, running inside a Node.js server.
--  MongoDB and Mongoose ODM for the database (Model) to store any data needed (i.e., user profiles, content, comments, etc.)
+-  Express.js and Node.js is the next level down and consists of the application tier and the backend. The Express.js server side framework, running  inside a Node.js server.
+-  MongoDB and Mongoose ODM for the database tier to store any data needed (i.e., user profiles, content, comments, etc.)
 
 ## Installation
 The user should clone the repository from Github and install all dependencies. For development or testing purposes, run 'npm install' on both the client and server directories to install dependencies as specified in the 'package.json' file. There are two servers for client side and server side, which can be run seperately. To run both servers at the same time, open the root directory and run npm start. Finally, to run this application enter 'npm run seed' and 'npm run develop' to be prompted with the localhost/ port# url.
