@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+
 import LoginForm from '../components/LoginForm';
 import SignUpForm from '../components/SignUpForm';
 import '../components/Signup.css';
@@ -8,10 +8,10 @@ import '../components/Signup.css';
 export default function SignUp() {
   return (
     <>
-      <div className="container">
+      <div className="container" style={{display:'block', alignItems: 'center'}}>
         <div className="row">
           <div className="column">
-            <div className="card">
+            <div className="card" st>
               <h1>Login</h1>
               <LoginForm />
             </div>
