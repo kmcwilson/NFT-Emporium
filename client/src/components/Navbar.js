@@ -32,7 +32,7 @@ function Navbar() {
               className='nav-links'
               onClick={closeMobileMenu}
             >
-              Buy/Sell
+              My Wish List
             </Link>
           </li>
           <li className='nav-item'>
