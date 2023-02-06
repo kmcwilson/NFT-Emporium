@@ -3,7 +3,7 @@ import {HiFire} from 'react-icons/hi'
 import {NavLink} from 'react-router-dom';
 import { HiMenu as Hamburger} from 'react-icons/hi';
 import './Navigation.css';
-
+import Auth from '../utils/auth';
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false)
 
@@ -35,9 +35,15 @@ const Navbar = () => {
             <li>
               <NavLink to="/about" onClick={closeNavBar}>About</NavLink>
             </li>
+            {Auth.loggedIn()?(
+            <li>
+              <NavLink to="/sign-up" style={{backgroundColor: 'grey', borderRadius: '10px', padding: '10px'}}onClick={closeNavBar}>Logout</NavLink>
+            </li>
+            ):(
             <li>
               <NavLink to="/sign-up"onClick={closeNavBar}>Login/Sign-up</NavLink>
             </li>
+            )}
           </ul>
         </div>
       </div>

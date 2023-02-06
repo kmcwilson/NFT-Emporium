@@ -49,7 +49,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
 
 // when we query a user, we'll also get another field called `NFTCount` with the number of saved NFT's we have
 userSchema.virtual('nftCount').get(function () {
-    return this.savedNFTs.length;
+    return this.savedNFTs?.length;
   });
   
   const User = model('User', userSchema);

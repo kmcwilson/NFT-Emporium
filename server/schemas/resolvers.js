@@ -93,7 +93,6 @@ const resolvers = {
                 return { token, user };
             },
                 saveNFTs: async (parent, args, context) => {
-                    console.log('Context user:', context.user)
                     if (context.user) {
                         const updatedUser = await User.findByIdAndUpdate(
                             { _id: context.user._id },
