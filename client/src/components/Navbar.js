@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-          <NavLink to='/landing'style={{color:'whitesmoke'}} ><HiFire /> NFT Emporium </NavLink>
+          <NavLink to='/'style={{color:'whitesmoke'}} ><HiFire /> NFT Emporium </NavLink>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
           <Hamburger style={{color:'whitesmoke'}} />
@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
             <li>
-              <NavLink to="/"  onClick={closeNavBar}>Home</NavLink>
+              <NavLink to="/ournfts"  onClick={closeNavBar}>Our Nfts</NavLink>
             </li>
             <li>
               <NavLink to="/wishlist" onClick={closeNavBar}>My Wish List</NavLink>

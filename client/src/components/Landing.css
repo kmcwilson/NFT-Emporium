@@ -1,0 +1,23 @@
+.greeting{
+    color: whitesmoke;
+    font-size: 50px;
+}
+
+.explore {
+    color: whitesmoke;
+    padding: 10px;
+    margin: 50px;
+    background-color:#009B77;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1024px) {
+    .greeting{
+        font-size: 25px;
+    }
+    .explore {
+        padding: 20px;  
+        border-radius: 10px;
+    }
+}
+
