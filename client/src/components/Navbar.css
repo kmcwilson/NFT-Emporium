@@ -112,7 +112,7 @@
       transition: 250ms;
     }
   
-    button {
+    .btn {
       display: none;
     }
   }
