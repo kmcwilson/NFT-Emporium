@@ -6,9 +6,7 @@ footer {
   margin-top: 6rem;
 }
 
-
-
-.footer__links{
+.footer-heela{
 display:flex;
 justify-content: center;
 gap: 2rem;
@@ -16,16 +14,61 @@ margin-bottom: 2rem;
 font-size: 1.2rem;
 }
 
-.footer__links a{
+.footer-heela a{
  
 color: white;
 text-decoration: none;
 padding: 0.5rem 1rem;
 }
 
-.footer__links:hover{
+
+.footer-heela:hover{
   background-color: #009B77;
   border-radius: 4px;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
+
+.footer-ryan{
+  display:flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  }
+
+  .footer-ryan a{
+ 
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    }
+
+    .footer-ryan:hover{
+      background-color: #009B77;
+      border-radius: 4px;
+      border-radius: 4px;
+      transition: all 0.2s ease-out;
+    }
+
+  .footer-katie{
+    display:flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    }
+
+    .footer-katie a{
+ 
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      }
+
+      .footer-katie:hover{
+        background-color: #009B77;
+        border-radius: 4px;
+        border-radius: 4px;
+        transition: all 0.2s ease-out;
+      }
