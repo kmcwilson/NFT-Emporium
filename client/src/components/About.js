@@ -26,7 +26,7 @@ const data = [
   },
 {
   id: 3,
-  image: '',
+  image: '/images/me.jpg',
   title: 'Ryan Park',
   desc: 'Full stack web developer providing unique perspectives on how end-users interact with websites and software platforms. Earned a Full Stack Web Development certificate from Carleton University. Innovative problem-solver who is passionate about developing with a focus on design and development. Strengths in creativity, teamwork, and building projects from ideation to execution.',
   github: 'https://github.com/ryanparketh',
