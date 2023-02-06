@@ -3,7 +3,7 @@ import '../App.css';
 import { FaLinkedin } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa'
 import './About.css'
-import { Card } from '@mui/material';
+import { Card, Button } from '@mui/material';
 
 
 const data = [
@@ -32,51 +32,46 @@ const data = [
   github: 'https://github.com/hqayumie',
   linkedIn: 'https://www.linkedin.com/in/heela-qayumie-8604b6226/'
 }
-  // {
-  //   id:2,
-  //   image:,
-  //   desc:
-  //   github:
-  //   linkedIn:
-  // },
-
-  // {
-  //   id:3,
-  //   image:,
-  //   desc:
-  //   github:
-  //   linkedIn:
-  // },
 
 ]
+const styles={
+  buttonStyle: {
+    backgroundColor: '#009B77', 
+    margin: '10px'
+},
+cardStyle: {
+
+}
+
+
+}
 const About = () => {
   return (
     <section id='about'>
-      <h2>About Us</h2>
-      <Card>
+      <h2 style={{padding: '30px', margin: '20px', textAlign: 'center', color:'whitesmoke'}}>About Us</h2>
 
       <div className="container about__container">
         {
           data.map(({ id, image, title, desc, github, linkedIn }) => {
             return (
-            
-              <article key={id} className='about__item'>
+            <Card key={id}>
+              <article  className='about__item'>
                 <div className="about__item-image">
                   <img src={image} alt={title} height='100px' width= '100px' className='float-left'/>
                 </div>
                 <h3>{title}</h3>
                 <p>{desc}</p>
                 <div className="portfolio__item-cta">
-                  <a href={github} className='btn' target='_blank' rel="noopener noreferrer" ><FaGithub />Github</a>
-                  <a href={linkedIn} className='btn btn-primary' target='_blank' rel="noopener noreferrer"><FaLinkedin />linkedIn</a>
+                 <Button style={styles.buttonStyle} > <a href={github} className='btn' target='_blank' rel="noopener noreferrer" ><FaGithub />Github</a></Button>
+                 <Button style={styles.buttonStyle} > <a href={linkedIn} className='btn' target='_blank' rel="noopener noreferrer"><FaLinkedin />linkedIn</a></Button>
                 </div>
               </article>
+              </Card>
               
             )
           })
         }
       </div>
-      </Card>
     </section>
   )
 }

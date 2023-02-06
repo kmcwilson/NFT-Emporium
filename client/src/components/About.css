@@ -29,7 +29,7 @@ h2{
 
 
 .about__container {
-    display:grid;
+    display:flex;
     grid-template-columns: repeat(3, 1 fr);
     gap: 2.5rem;
     width: var(--container-width-lg);
@@ -45,7 +45,7 @@ h2{
     box-sizing: border-box;
     column-width: 500px;
 }
-about__item-image {
+.about__item-image {
     border-radius: 1.5rem;
     overflow: hidden;
   }
@@ -61,20 +61,21 @@ about__item-image {
   }
 
   .btn {
-    border: 1px solid var(#009B77);
+
+    background-color: var(#009B77);
+    /* border: 1px solid var(#009B77);
     border-radius: 0.4rem;
     color: black;
     cursor: pointer;
     display: inline-block;
     padding: .075rem 1.2rem;
     transition: var(--transition);
-    width: max-content;
+    width: max-content; */
   }
   /* ================ MEDIA QUERIES (MEDIUM DEVICES) ================= */
 @media screen and (max-width: 1024px) {
     .about__container {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
+     display:block;
     }
   }
   

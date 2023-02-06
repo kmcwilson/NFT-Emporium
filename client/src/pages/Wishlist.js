@@ -20,7 +20,7 @@ console.log('Data:',data);
 
   return (
     <>
-      <h1 style={{padding: '50px', margin: '20px', textAlign: 'center'}}>My Wish List</h1>
+      <h1 style={{padding: '50px', margin: '20px', textAlign: 'center', color:'whitesmoke'}}>My Wish List</h1>
       <Box sx={{ flexGrow: 1 }} style={{margin:'50px', marginBottom: '20px', justifyContent: 'center'}}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {nfts.map(x=> 

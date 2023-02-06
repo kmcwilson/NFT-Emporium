@@ -19,11 +19,12 @@ console.log('Data:',data);
 
   return (
     <>
-      <h1 style={{padding: '50px', margin: '20px', textAlign: 'center'}}>{loading? (<div>Loading...</div>):(<div>Our NFTs</div>)}</h1>
+      <h1 style={{padding: '50px', margin: '20px', textAlign: 'center', color:'whitesmoke'}}>{loading? (<div>Loading...</div>):(<div>Our NFTs</div>)}</h1>
       <Box sx={{ flexGrow: 1 }} style={{margin:'50px', marginBottom: '20px', justifyContent: 'center'}}>
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {nfts.map(nft=> 
-          (<HomeCard 
+          (
+           <HomeCard 
           key={nft._id}
           _id={nft._id}
           nft_token={nft.nft_token}
@@ -31,7 +32,8 @@ console.log('Data:',data);
           nft_collection={nft.collection}
           price= {nft.price}
           owner={nft.owner}
-          />)
+          />
+      )
           )}
       </Grid>
       </Box>
