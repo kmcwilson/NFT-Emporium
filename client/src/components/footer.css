@@ -4,6 +4,8 @@ footer {
   text-align: center;
   font-size:medium;
   margin-top: 6rem;
+  display:flex;
+  justify-content: center;
 }
 
 .footer-heela{

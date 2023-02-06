@@ -5,7 +5,6 @@ import './footer.css'
   const Footer = () => {
     return (
       <footer>
-      
         <div className='footer-heela'>
           <a href="mailto:heelaqayumie@gmail.com"> Heela Qayumie </a>
           </div>
